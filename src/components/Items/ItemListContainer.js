@@ -10,7 +10,9 @@ const ItemListContainer = (props) => {
     
     // eslint-disable-next-line no-unused-vars
     const [greeting,setGreeting] = useState(props.greeting)
-    const [items,setItems] = useState([
+    const [items,setItems] = useState([{}])
+    // eslint-disable-next-line no-unused-vars
+    const [itemsBd,setItemsBd] = useState([
         {
           id: 1,
           title: 'Zapatillas puma',
@@ -49,15 +51,17 @@ const ItemListContainer = (props) => {
         return new Promise((res, rej) => {
           setTimeout(() => {
             res(
-              items
+              itemsBd
               );
           }, 2000);
         })
       }
     
       useEffect(() => {
+        console.log("aaaaaaaaaaaaaaaa")
         simuloRetraso()
         .then((data) => {
+          console.log("bbbbbbbbbbbbbbbbbb")
           setItems(data);     
         })
         .catch(() => err => console.log(err)) 
@@ -68,11 +72,10 @@ const ItemListContainer = (props) => {
             <div >
                 <div> <p> {greeting} </p></div>
                 <div >
-                  
                    <ItemCount stock={6} initial={1}></ItemCount>
                    </div>
                 <div >
-                    <ItemList items={items}></ItemList>
+                    <ItemList items={items} ></ItemList>
                 </div>
                
                
