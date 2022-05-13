@@ -1,21 +1,22 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, {useState} from "react";
 import ItemCount from "./ItemCount"
 
-class ItemListContainer extends React.Component{
-    constructor(props){
-        super(props);
-        this.state ={
-            greeting: props.greeting
+const ItemListContainer = (props) => {
+   
+ 
+     const [greeting,setGreeting]= useState(props.greeting)
+      
+        function onAdd (){
+            console.log("agrego al carrito")
         }
-    }
-
-    render (){
+    
+ 
         return(
             <div>
-                <p> {this.state.greeting} </p>
-                <ItemCount stock={6} initial={1}></ItemCount>
+                <p> {greeting} </p>
+                <ItemCount stock={6} initial={1} onAdd={onAdd}></ItemCount>
             </div>
         );
     }
-}
 export default ItemListContainer;
