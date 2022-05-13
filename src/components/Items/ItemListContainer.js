@@ -5,7 +5,7 @@ class ItemListContainer extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            greeting: 'LISTA DE ITEMS '
+            greeting: props.greeting
         }
     }
 
