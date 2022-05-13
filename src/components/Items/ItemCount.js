@@ -25,7 +25,8 @@ const [contador,setContador] = useState(initial)
                 <i className="bi bi-dash"></i>
                 </button>
                 <div>
-                    {contador}
+                    {contador}<br></br>
+                    
                 </div>
                 <button
                     className="btn btn-dark" 
@@ -39,9 +40,10 @@ const [contador,setContador] = useState(initial)
             className="btn btn-dark" 
             onClick={() => onAdd(contador)}>
             Agregar al carrito
-         </button>
-           
+         </button>  
         </div> 
+        <div><h4>Unidades disponibles: {stock}</h4>
+                  </div>
       </div>
   );
 
