@@ -13,8 +13,7 @@ const Item = ({product}) => {
                     />
                 <div className="card-body">
                     <h5 className="card-title">{product.title}</h5>
-                     <h5 className="card-title">{product.price}</h5>  
-                    <a href="/#" className="btn btn-outline-secondary rounded-0" target="_blank">Añadir al carro</a>
+                     <h5 className="card-title">{product.price}</h5>    
                 </div>
             </div>
     

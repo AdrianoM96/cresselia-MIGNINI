@@ -19,7 +19,7 @@ const ItemListContainer = (props) => {
           description:'description',
           image: zapas3,
           category: 'hombre',
-          price: 999
+          price: "$999"
         },
       {
         id: 2,
@@ -27,7 +27,7 @@ const ItemListContainer = (props) => {
         description:'description',
         image: pantalon1,
         category: 'hombre',
-        price: 111
+        price: "$111"
       },
       {
         id: 3,
@@ -35,7 +35,7 @@ const ItemListContainer = (props) => {
         description:'description',
         image: zapas2,
         category: 'mujer',
-        price: 222
+        price: "$222"
       },
       {
         id: 4,
@@ -43,11 +43,16 @@ const ItemListContainer = (props) => {
         description:'description',
         image: buzo1,
         category: 'mujer',
-        price: 444
+        price: "$444"
       }
     ])
 
+    function onAdd (){
+      console.log("agrego al carrito")
+  }
+
     const simuloRetraso = () => {   
+      
         return new Promise((res, rej) => {
           setTimeout(() => {
             res(
@@ -58,21 +63,18 @@ const ItemListContainer = (props) => {
       }
     
       useEffect(() => {
-        console.log("aaaaaaaaaaaaaaaa")
         simuloRetraso()
         .then((data) => {
-          console.log("bbbbbbbbbbbbbbbbbb")
           setItems(data);     
         })
         .catch(() => err => console.log(err)) 
       },);
-    
-   
+         
         return(
             <div >
                 <div> <p> {greeting} </p></div>
                 <div >
-                   <ItemCount stock={6} initial={1}></ItemCount>
+                   <ItemCount stock={6} initial={1} onAdd={onAdd}></ItemCount>
                    </div>
                 <div >
                     <ItemList items={items} ></ItemList>
