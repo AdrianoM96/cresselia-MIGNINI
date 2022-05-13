@@ -1,3 +1,4 @@
+import CartWidget from "../cart/CartWidget";
 
 
 const Navbar = () =>{
@@ -23,7 +24,7 @@ const Navbar = () =>{
         </div>
         
         <div className="col-1">
-        <button type="button" className="btn btn-info"><i className="bi bi-cart2"></i></button>
+        <button type="button" className="btn btn-info"><CartWidget></CartWidget></button>
         </div>
        
         </nav>
