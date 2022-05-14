@@ -51,7 +51,7 @@ const ItemListContainer = (props) => {
       console.log("agrego al carrito")
   }
 
-    const simuloRetraso = () => {   
+      const  simuloRetraso = () => {   
       
         return new Promise((res, rej) => {
           setTimeout(() => {
@@ -63,13 +63,13 @@ const ItemListContainer = (props) => {
       }
     
       useEffect(() => {
-        simuloRetraso()
+         simuloRetraso()
         .then((data) => {
           setItems(data);     
         })
         .catch(() => err => console.log(err)) 
       },);
-         
+
         return(
             <div >
                 <div> <p> {greeting} </p></div>
@@ -79,8 +79,6 @@ const ItemListContainer = (props) => {
                 <div >
                     <ItemList items={items} ></ItemList>
                 </div>
-               
-               
             </div>
         );
     
