@@ -1,0 +1,30 @@
+.count{
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnSize{
+    
+    border-radius: 9999px;
+    border-width: 0px;
+    border-color: white;
+    background-color: white;
+    border-style: solid
+
+}
+.labelCount{
+text-align: center;
+margin-top: 0.4rem;
+margin-right: 0.25rem;
+margin-left: 0.25rem;
+
+}
+.bi{
+   font-size: 2rem;
+}
+.imageDetail{
+    height: 100%;
+    width: 100%;
+}
