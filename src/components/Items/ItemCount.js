@@ -36,7 +36,8 @@ const [contador,setContador] = useState(initial)
             <div className="row count">
             <br></br>
             <div>
-                {stock > 0 ?
+                {
+                stock > 0 ?
                 <button
                     id="agregarAlCarrito"
                     className="btn btn-dark" 

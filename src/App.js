@@ -9,7 +9,6 @@ function App() {
     <div>
       <Navbar></Navbar>
       <ItemListContainer greeting="LISTA DE ITEMS"></ItemListContainer>
-      DETAIL CONTAINER
       <ItemDetailContainer></ItemDetailContainer>
    
 

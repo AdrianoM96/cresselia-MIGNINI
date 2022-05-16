@@ -5,7 +5,7 @@ import zapas3 from '../assets/zapas-puma-hombre.jpg'
 const ItemDetailContainer = () => {
 
     const [product,setProduct] = useState([{}])
-
+    const [loading,setLoading] = useState(true)
     const getProduct = () => {
     
         return new Promise((res, rej) => {
@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
         getProduct()
         .then((data) => {
           setProduct(data);     
-
+          setLoading(false)
         })
         .catch(() => console.log("error"));
         
@@ -36,9 +36,17 @@ const ItemDetailContainer = () => {
 
       return (
          <div className="container">
-             <div className="row">
+           {
+             loading ?
+                <div></div> :
+             <>
+              <div>DETAIL CONTAINER </div>
+              <div className="row">
                 <ItemDetail product={product}> </ItemDetail>
              </div>
+             </> 
+           }
+             
          </div>
       )
 

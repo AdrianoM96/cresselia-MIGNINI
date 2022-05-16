@@ -6,7 +6,7 @@ import buzo1 from '../assets/buzo-billabong-mujer.jpg'
 import pantalon1 from '../assets/pantalon-hombre.jpg'
 
 const ItemListContainer = (props) => {
-    
+  const [loading,setLoading] = useState(true)
     // eslint-disable-next-line no-unused-vars
     const [greeting,setGreeting] = useState(props.greeting)
     const [items,setItems] = useState([{}])
@@ -60,17 +60,24 @@ const ItemListContainer = (props) => {
       useEffect(() => {
          simuloRetraso()
         .then((data) => {
-          setItems(data);     
+          setItems(data);  
+          setLoading(false)   
         })
         .catch(() => err => console.log(err)) 
       },);
 
         return(
             <div >
+              {
+              loading ?
+                <div> CARGANDO PRODUCTOS </div> :
+                <>
                 <div> <p> {greeting} </p></div>
                 <div >
                     <ItemList items={items} ></ItemList>
                 </div>
+                </>
+              }
             </div>
         );
     
