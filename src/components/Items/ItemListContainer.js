@@ -71,28 +71,30 @@ const ItemListContainer = (props) => {
     simuloRetraso()
     .then((data) => {
       setItems(data);    
-      
+      setLoading(false)
     })
     .catch(() => err => console.log(err))
-    .finally(()=> filtrar(),setLoading(false))
+    .finally(()=> filtrar())
     
 
   },[categoryId,items]);
-    
+  console.log(loading)
         return(
             <div className="container">
-                <div className="row"> 
-                  {greeting}
-                </div> 
-               { loading ?
-                <div className="row"> 
-                  CARGANDO
-                </div> 
-                :
-                <div className="row">
-                  <ItemList items={filtro} key={filtro.id}></ItemList> 
-                </div>
-                 }  
+               { 
+               loading ? 
+                  <div className="row"> 
+                    CARGANDO PRODUCTOS
+                  </div> :
+                  <>
+                  <div className="row"> 
+                    {greeting}
+                  </div> 
+                  <div className="row">
+                    <ItemList items={filtro} key={filtro.id}></ItemList> 
+                  </div>
+                  </>
+                  }  
             </div>          
         )
     

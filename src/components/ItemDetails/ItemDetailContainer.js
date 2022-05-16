@@ -68,6 +68,7 @@ const ItemDetailContainer = () => {
                   setProduct(data[i])
                 }
             }
+            setLoading(false)
         })
         .catch(() => err => console.log(err))
         .finally(() => setLoading(false))
@@ -79,9 +80,10 @@ const ItemDetailContainer = () => {
       
       return (
          <div className="container">
-           {loading ?
+           {
+           loading ?
             <div className="row">
-              CARGANDO
+              CARGANDO PRODUCTO
             </div>
             :
              <div className="row">
