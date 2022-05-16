@@ -52,7 +52,6 @@ const ItemListContainer = (props) => {
 
    useEffect(() => {    
     function simuloRetraso(){  
-      console.log("SIMMULO")
       return new Promise((res, rej) => {
       
         setTimeout(() => {
@@ -70,20 +69,18 @@ const ItemListContainer = (props) => {
         itemsBd.filter(item => item.category === {categoryId}.categoryId) 
             .map(filtrado => (filtrado)) :
             itemsBd.map(item => item))
-            console.log("FILTRO")
     }
     simuloRetraso()
     .then((data) => {
       setItems(data);    
       setLoading(false)
-      console.log("SETIE")
     })
     .catch(() => err => console.log(err))
-    .finally(()=> filtrar(), console.log("FINALLY"))
+    .finally(()=> filtrar())
     
 
   },[categoryId,itemsBd,items]);
-  console.log(loading)
+
         return(
             <div className="container">
                { 
