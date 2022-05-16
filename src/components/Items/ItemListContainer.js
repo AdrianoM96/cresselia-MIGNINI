@@ -14,7 +14,8 @@ const ItemListContainer = (props) => {
   const {categoryId} = useParams();
   const [filtro,setFiltro]=useState([{}])
   const [loading, setLoading] = useState(true)
-  const [items,setItems] = useState([
+  const [items,setItems] = useState([{}])
+  const [itemsBd,setItemsBd] = useState([
     {
       id: 1,
       title: 'Zapatillas puma',
@@ -51,33 +52,37 @@ const ItemListContainer = (props) => {
 
    useEffect(() => {    
     function simuloRetraso(){  
+      console.log("SIMMULO")
       return new Promise((res, rej) => {
       
         setTimeout(() => {
           res(
-            items
+            itemsBd
             );
         }, 2000);
       
       })
+      
     }
     function filtrar (){
         
       setFiltro({categoryId}.categoryId !== undefined ?
-        items.filter(item => item.category === {categoryId}.categoryId) 
+        itemsBd.filter(item => item.category === {categoryId}.categoryId) 
             .map(filtrado => (filtrado)) :
-            items.map(item => item))
+            itemsBd.map(item => item))
+            console.log("FILTRO")
     }
     simuloRetraso()
     .then((data) => {
       setItems(data);    
       setLoading(false)
+      console.log("SETIE")
     })
     .catch(() => err => console.log(err))
-    .finally(()=> filtrar())
+    .finally(()=> filtrar(), console.log("FINALLY"))
     
 
-  },[categoryId,items]);
+  },[categoryId,itemsBd,items]);
   console.log(loading)
         return(
             <div className="container">
