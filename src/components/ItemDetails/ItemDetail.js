@@ -2,7 +2,7 @@ import React from "react";
 import ItemCount from "../Items/ItemCount";
 
 
-const ItemDetail = ({ product }) => {
+const ItemDetail = ( {product} ) => {
 
 
 function onAdd(){
