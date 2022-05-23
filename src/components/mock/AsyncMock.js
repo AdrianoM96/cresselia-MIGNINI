@@ -10,7 +10,7 @@ const itemsBd = [
       description:'description',
       image: zapas3,
       category: 'hombre',
-      price: "$999"
+      price: 999
     },
   {
     id: 2,
@@ -18,7 +18,7 @@ const itemsBd = [
     description:'description',
     image: pantalon1,
     category: 'hombre',
-    price: "$111"
+    price: 111
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const itemsBd = [
     description:'description',
     image: zapas2,
     category: 'mujer',
-    price: "$222"
+    price: 222
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const itemsBd = [
     description:'description',
     image: buzo1,
     category: 'mujer',
-    price: "$444"
+    price: 444
   }
 ]
 
