@@ -20,7 +20,7 @@ const ItemDetail = ({ product }) => {
         <div className="col-6"> 
           <div className="col-10">
               <h1>{product.title}</h1><br></br>
-              {product.description}<br></br>
+              <h5>{product.description}</h5><br></br>
              <h2>${product.price}</h2> <br></br>  
           </div>
           <div className="col-4">

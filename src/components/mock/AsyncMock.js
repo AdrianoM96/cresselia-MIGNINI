@@ -7,7 +7,7 @@ const itemsBd = [
     {
       id: 1,
       title: 'Zapatillas puma',
-      description:'description',
+      description:'Zapatillas puma hombre future rider',
       image: zapas3,
       category: 'hombre',
       price: 999
@@ -15,7 +15,7 @@ const itemsBd = [
   {
     id: 2,
     title: 'Pantalon sport',
-    description:'description',
+    description:'Pantalon sport hombre black urban',
     image: pantalon1,
     category: 'hombre',
     price: 111
@@ -23,15 +23,15 @@ const itemsBd = [
   {
     id: 3,
     title: 'Zapatillas sport',
-    description:'description',
+    description:'Zapatilla sport mujer  AQ shoes',
     image: zapas2,
     category: 'mujer',
     price: 222
   },
   {
     id: 4,
-    title: 'Buzo top',
-    description:'description',
+    title: 'Buzo billabong',
+    description:'Buzo billabong mujer classic',
     image: buzo1,
     category: 'mujer',
     price: 444
