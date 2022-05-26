@@ -39,13 +39,14 @@ const [contador,setContador] = useState(initial)
                 {stock > 0 ?
                 <button
                     id="agregarAlCarrito"
-                    className="btn btn-dark" 
+                    className="btn btn-dark marginb" 
                     onClick={() => onAdd(contador)}>
                     Agregar al carrito
                 </button> :
                 <button
                     id="agregarAlCarrito"
-                    className="btn btn-dark">
+                    className="btn btn-dark"
+                    disabled>
                     Agregar al carrito
                 </button>
                 }      

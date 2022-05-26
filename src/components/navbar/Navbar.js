@@ -5,17 +5,17 @@ const Navbar = () =>{
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-       <Link to="/" className='navbar-brand'>Creselia</Link>
+       <Link to="/" className='navbar-brand'>Cresselia</Link>
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
             <li className="nav-item">
-                <Link to="/" className='nav-link'>Incio</Link>
+                <Link to="/" className='nav-link'>INICIO</Link>
             </li>
             <li className="nav-item">
-                <Link to="/category/hombre" className='nav-link'>Hombre</Link>
+                <Link to="/category/hombre" className='nav-link'>HOMBRE</Link>
             </li>
             <li className="nav-item">
-                <Link to="/category/mujer" className='nav-link'>Mujer</Link>
+                <Link to="/category/mujer" className='nav-link'>MUJER</Link>
             </li>
             </ul>   
         </div>
