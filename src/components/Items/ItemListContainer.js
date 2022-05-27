@@ -10,7 +10,7 @@ const ItemListContainer = () => {
   const {categoryId} = useParams();
   const [loading, setLoading] = useState(true)
   const [items,setItems] = useState([{}])
-  const [greeting,setgreeting] = useState('')
+  const [greeting,setGreeting] = useState('')
  
   useEffect(() => { 
 
@@ -19,7 +19,7 @@ const ItemListContainer = () => {
     .then (items => {
       setItems(items)
       setLoading(false) 
-      setgreeting('LISTA DE PRODUCTOS')
+      setGreeting('LISTA DE PRODUCTOS')
     })
     .catch((err) => console.log(err)) :
 
@@ -27,7 +27,7 @@ const ItemListContainer = () => {
     .then((data) => {
       setItems(data) 
       setLoading(false) 
-      setgreeting('PRODUCTOS POR CATEGORIA')
+      setGreeting('PRODUCTOS POR CATEGORIA')
    
     })
     .catch((err) => console.log(err))

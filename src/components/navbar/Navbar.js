@@ -21,11 +21,8 @@ const Navbar = () =>{
         </div>
         
         <div className="col-1">
-     
             <button type="button" className="btn btn-info"> <CartWidget></CartWidget> </button>
-    
         </div>
-       
         </nav>
     );
 }

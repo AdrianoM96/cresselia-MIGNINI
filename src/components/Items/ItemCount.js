@@ -36,20 +36,13 @@ const [contador,setContador] = useState(initial)
             <div className="row count">
             <br></br>
             <div>
-                {stock > 0 ?
                 <button
                     id="agregarAlCarrito"
                     className="btn btn-dark marginb" 
-                    onClick={() => onAdd(contador)}>
+                    onClick={() => onAdd(contador)}
+                    disabled ={ stock <= 0 }>
                     Agregar al carrito
-                </button> :
-                <button
-                    id="agregarAlCarrito"
-                    className="btn btn-dark"
-                    disabled>
-                    Agregar al carrito
-                </button>
-                }      
+                </button>     
                 <h6>Unidades disponibles: {stock}</h6>
         </div> 
             </div> 
