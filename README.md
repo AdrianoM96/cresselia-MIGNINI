@@ -2,9 +2,9 @@
 Este proyecto es un E-Commerce de ropa, realizado con React JS
 
 ## Instalacion
-1) Clonar el repositorio.\
-2) Ejecutar npm install.\
-3) Ejecutar npm start para iniciar el proyecto en localhost 3000.\
+1) Clonar el repositorio.
+2) Ejecutar npm install.
+3) Ejecutar npm start para iniciar el proyecto en localhost 3000.
 
 ## Contenido
 ### Rutas
