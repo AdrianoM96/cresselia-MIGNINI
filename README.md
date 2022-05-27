@@ -14,5 +14,5 @@ Este proyecto es un E-Commerce de ropa, realizado con React JS
 
 ## Dependencias
 Este proyecto de ReactJs utiliza estas dependencias :
-ReactJs.
-React Router DOM.
+ReactJs
+React Router DOM
