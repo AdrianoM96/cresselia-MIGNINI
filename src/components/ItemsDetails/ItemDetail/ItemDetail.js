@@ -1,11 +1,11 @@
 import React from "react";
-import ItemCount from "../../ItemsContainer/ItemCount/ItemCount";
+import ItemCount from "../../ItemCount/ItemCount";
 import './ItemDetail.css'
 
 const ItemDetail = ({ product }) => {
 
   function onAdd() {
-    console.log("agrego al carrito")
+  
   }
 
   return (
@@ -23,9 +23,15 @@ const ItemDetail = ({ product }) => {
               <h5>{product.description}</h5><br></br>
              <h2>${product.price}</h2> <br></br>  
           </div>
+          {product.stock !==0 ?
           <div className="col-5">
               <ItemCount stock={product.stock} initial={1} onAdd={onAdd}></ItemCount>
-          </div>        
+          </div>  
+          :
+          <div className="col-5">
+              <ItemCount stock={product.stock} initial={0} onAdd={onAdd}></ItemCount>
+          </div>  
+          }      
         </div> 
       </div>
     </div>

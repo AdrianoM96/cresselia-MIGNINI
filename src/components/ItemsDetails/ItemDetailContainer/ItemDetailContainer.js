@@ -9,37 +9,40 @@ import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
 
-    const [product,setProduct] = useState([{}])
-    const [loading, setLoading] = useState(true)
-    const {itemId} = useParams()
+  const [product,setProduct] = useState([{}])
+  const [loading, setLoading] = useState(true)
+  const {itemId} = useParams()
 
-      useEffect(() => {
+  useEffect(() => {
 
-        getProductDetail(itemId)
+    setLoading(true)
+
+      getProductDetail(itemId)
         .then(data => {
-          setProduct(data)
-          setLoading(false)
-        })
-        .catch(() => err => console.log(err))
-        
-        
+          setProduct(data)  
+      })
+      .catch(() => err => console.log(err))
+      .finally(() => setLoading(false))
+         
       }, [itemId]);
 
-      return (
-         <div className="container">
-           {
-           loading ?
-            <div className="row center">
-              <Spinner></Spinner>
-            </div>
-            :
-             <div className="row ">
-                <ItemDetail product={product}> </ItemDetail>
-             </div>
-            }
-         </div>
-      )
-
+  return (
+    <div className="container">
+      {
+      loading ?
+        <div className="row center">
+          <Spinner></Spinner>
+          </div>  
+        :
+        product !== undefined  ?
+          <div className="row ">
+            <ItemDetail product={product}> </ItemDetail>
+          </div>
+        :
+          <h2 className="error404"> Producto no encontrado</h2>
+      }
+    </div>
+  )
     }
 
 export default ItemDetailContainer;

@@ -9,50 +9,58 @@ const ItemListContainer = () => {
 
   const {categoryId} = useParams();
   const [loading, setLoading] = useState(true)
-  const [items,setItems] = useState([{}])
+  const [products,setProducts] = useState([{}])
   const [greeting,setGreeting] = useState('')
  
   useEffect(() => { 
 
-    !categoryId ?
+  setLoading(true)
+
+  !categoryId ?
     getProducts()
-    .then (items => {
-      setItems(items)
-      setLoading(false) 
-      setGreeting('LISTA DE PRODUCTOS')
+      .then (data => {
+        setProducts(data)
+        setGreeting('LISTA DE PRODUCTOS')
     })
-    .catch((err) => console.log(err)) :
+
+    .catch((err) => console.log(err))
+    .finally(() => setLoading(false)) :
 
     getProductsCategory(categoryId)
-    .then((data) => {
-      setItems(data) 
-      setLoading(false) 
-      setGreeting('PRODUCTOS POR CATEGORIA')
-   
+      .then((data) => {
+        setProducts(data) 
+        setGreeting('PRODUCTOS POR CATEGORIA')
     })
+
     .catch((err) => console.log(err))
+    .finally(() => setLoading(false))
   },[categoryId]); 
 
-  
         return(
             <div className="container">
                { 
                loading ? 
                   <div className="row center">
                     <Spinner />
-                  </div> :
-                  <>
-                  <div className="row center"> 
-                    <h5 className="greeting">{greeting}</h5>
                   </div> 
-                  <div className="row">
-                    <ItemList items={items}></ItemList> 
+                  :
+                  products.length > 0 ?
+                  <>
+                   <div className="row center"> 
+                      <h5 className="greeting">{greeting}</h5>
+                    </div> 
+                    <div className="row">
+                      <ItemList products={products}></ItemList> 
+                    </div> 
+                 </> 
+                 :
+                  <div className="row center">
+                    <h2 className="error404"> No hay productos por el momento en esta categoria o esta categoria
+                     no existe</h2>
                   </div>
-                  </>
                   }  
             </div>          
         )
-    
 }
 
 export default ItemListContainer;

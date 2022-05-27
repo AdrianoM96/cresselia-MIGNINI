@@ -13,7 +13,7 @@ export const itemsBd = [
       image: zapas3,
       category: 'hombre',
       price: 13000,
-      stock: 5
+      stock: 3
     },
   {
     id: "2",
@@ -22,7 +22,7 @@ export const itemsBd = [
     image: pantalon1,
     category: 'hombre',
     price: 9999,
-    stock: 10
+    stock: 0
   },
   {
     id: "3",
@@ -31,7 +31,7 @@ export const itemsBd = [
     image: zapas2,
     category: 'mujer',
     price: 5677,
-      stock: 7
+      stock: 5
   },
   {
     id: "4",
@@ -40,7 +40,7 @@ export const itemsBd = [
     image: buzo1,
     category: 'mujer',
     price: 8000,
-    stock: 0
+    stock: 5
   },
   {
     id: "5",
