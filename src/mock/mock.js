@@ -1,11 +1,11 @@
-import zapas2 from '../images/assets/zapas-mujer1.jpg'
-import zapas3 from '../images/assets/zapas-puma-hombre.jpg'
-import buzo1 from '../images/assets/buzo-billabong-mujer.jpg'
-import buzo2 from '../images/assets/buzo-sport-mujer.jpg'
-import pantalon2 from '../images/assets/pantalon-hombre2.jpg'
-import pantalon1 from '../images/assets/pantalon-hombre.jpg'
+import zapas2 from '../assets/images/zapas-mujer1.jpg'
+import zapas3 from '../assets/images/zapas-puma-hombre.jpg'
+import buzo1 from '../assets/images/buzo-billabong-mujer.jpg'
+import buzo2 from '../assets/images/buzo-sport-mujer.jpg'
+import pantalon2 from '../assets/images/pantalon-hombre2.jpg'
+import pantalon1 from '../assets/images/pantalon-hombre.jpg'
 
-const itemsBd = [
+export const itemsBd = [
     {
       id: "1",
       title: 'Zapatillas puma',
@@ -62,35 +62,4 @@ const itemsBd = [
   }
 ]
 
-export const  getProducts = () => {   
-      
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        res(
-          itemsBd
-          );
-      }, 2000);
-    })
-  }
 
-  export const  getProductDetail = (itemId) => {  
-
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        res(
-          itemsBd.find(item=>item.id === itemId)
-          );  
-      }, 2000);
-    })
-  }
-
-  export const  getProductsCategory = (category) => {   
-      
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        res(
-          itemsBd.filter(item=>item.category === category)
-          );
-      }, 2000);
-    })
-  }

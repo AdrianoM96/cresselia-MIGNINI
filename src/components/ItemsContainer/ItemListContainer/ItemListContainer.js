@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-vars */
 import React, { useState,useEffect } from "react";
-import ItemList from "./ItemList";
+import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import {getProducts,getProductsCategory} from '../../Mock/AsyncMock'
-import Spinner from '../Spinner/Spinner'
+import {getProducts,getProductsCategory} from '../../../mock/promises'
+import Spinner from '../../Spinner/Spinner'
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
 
@@ -38,11 +38,11 @@ const ItemListContainer = () => {
             <div className="container">
                { 
                loading ? 
-                  <div className="row d-flex justify-content-center">
+                  <div className="row center">
                     <Spinner />
                   </div> :
                   <>
-                  <div className="row d-flex justify-content-center"> 
+                  <div className="row center"> 
                     <h5 className="greeting">{greeting}</h5>
                   </div> 
                   <div className="row">

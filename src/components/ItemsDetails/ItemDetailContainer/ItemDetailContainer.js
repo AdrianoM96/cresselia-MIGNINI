@@ -1,9 +1,10 @@
-/* eslint-disable eqeqeq */
+
 import React, { useEffect, useState } from 'react'
-import ItemDetail from './ItemDetail'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-import {getProductDetail} from '../../Mock/AsyncMock'
-import Spinner from '../Spinner/Spinner'
+import {getProductDetail} from '../../../mock/promises'
+import Spinner from '../../Spinner/Spinner'
+import './ItemDetailContainer.css'
 
 
 const ItemDetailContainer = () => {
@@ -28,7 +29,7 @@ const ItemDetailContainer = () => {
          <div className="container">
            {
            loading ?
-            <div className="row d-flex justify-content-center">
+            <div className="row center">
               <Spinner></Spinner>
             </div>
             :
