@@ -1,5 +1,5 @@
 # Cresselia
-Este proyecto es un E-Commerce de ropa, realizado con React JS
+Este proyecto es un E-Commerce de indumentaria, realizado con React JS
 
 ## Demo
  ![](./src/assets/gif/preEntrega.gif)
