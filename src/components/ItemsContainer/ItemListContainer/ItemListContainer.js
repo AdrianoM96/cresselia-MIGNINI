@@ -19,23 +19,25 @@ const ItemListContainer = () => {
   !categoryId ?
     getProducts()
       .then (data => {
-        setGreeting('LISTA DE PRODUCTOS')
+       
         setProducts(data)
         
     })
 
     .catch((err) => console.log(err))
-    .finally(() => setLoading(false)) :
+    .finally(() => setLoading(false),
+      setGreeting('LISTA DE PRODUCTOS')) :
 
     getProductsCategory(categoryId)
       .then((data) => {
-        setGreeting('PRODUCTOS POR CATEGORIA')
+   
         setProducts(data) 
         
     })
 
     .catch((err) => console.log(err))
-    .finally(() => setLoading(false))
+    .finally(() => setLoading(false), 
+      setGreeting('PRODUCTOS POR CATEGORIA'))
   },[categoryId]); 
 
         return(
