@@ -15,7 +15,7 @@ Este proyecto es un E-Commerce de ropa, realizado con React JS
 `path "/category/:categoryId"` direcciona tambien al componente ItemListContainer pero con un filtro, en este caso hombre o mujer.\
 `path "/item/:itemId"` direcciona al componente DetailContainer ,este contiene al producto seleccionado, mostrando su nombre,precio,stock,descripcion.
 
-## Dependencias
+## Dependencias/librerias
 Este proyecto de ReactJs utiliza estas dependencias/librerias.\
 ReactJs.\
 React Router DOM.\
