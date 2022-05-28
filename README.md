@@ -17,6 +17,8 @@ segun su categoria. En este caso, hombre o mujer.\
 `path "/item/:itemId"` direcciona al componente DetailContainer, este muestra al producto seleccionado, mostrando su nombre,precio,stock,descripcion. Tiene la posibilidad de elegir cuantos productos agregar al carrito segun su stock
 La funcion de agregar al carrito esta en desarrollo
 
+Ademas, esta contemplado que si se coloca una ruta manualmente y esta no existe, muestre un mensaje 
+
 ## Dependencias/librerias
 Este proyecto de ReactJs utiliza estas dependencias/librerias.\
 ReactJs.\
