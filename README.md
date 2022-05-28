@@ -18,4 +18,6 @@ Este proyecto es un E-Commerce de ropa, realizado con React JS
 ## Dependencias
 Este proyecto de ReactJs utiliza estas dependencias.\
 ReactJs.\
-React Router DOM
+React Router DOM.\
+Bootstrap 4.2.\
+Icons bootstrap 1.8
