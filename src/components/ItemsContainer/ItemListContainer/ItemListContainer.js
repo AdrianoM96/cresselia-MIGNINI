@@ -19,8 +19,9 @@ const ItemListContainer = () => {
   !categoryId ?
     getProducts()
       .then (data => {
-        setProducts(data)
         setGreeting('LISTA DE PRODUCTOS')
+        setProducts(data)
+        
     })
 
     .catch((err) => console.log(err))
@@ -28,8 +29,9 @@ const ItemListContainer = () => {
 
     getProductsCategory(categoryId)
       .then((data) => {
-        setProducts(data) 
         setGreeting('PRODUCTOS POR CATEGORIA')
+        setProducts(data) 
+        
     })
 
     .catch((err) => console.log(err))
