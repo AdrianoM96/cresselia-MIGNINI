@@ -1,6 +1,9 @@
 # Cresselia
 Este proyecto es un E-Commerce de ropa, realizado con React JS
 
+## Demo
+ ![](./src/assets/gif/preEntrega.gif)
+
 ## Instalacion
 1) Clonar el repositorio.
 2) Ejecutar npm install.
