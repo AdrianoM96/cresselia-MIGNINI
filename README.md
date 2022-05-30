@@ -23,5 +23,5 @@ Ademas, esta contemplado que si se coloca una ruta manualmente y esta no existe,
 Este proyecto de ReactJs utiliza estas dependencias/librerias.\
 ReactJs.\
 React Router DOM.\
-Bootstrap 4.2 (CDN).\ 
+Bootstrap 4.2 (CDN) .\ 
 Icons bootstrap 1.8 (CDN)
