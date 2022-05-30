@@ -2,7 +2,7 @@
 import Navbar from './components/Navbar/NavBar';
 import ItemListContainer from './components/ItemsContainer/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemsDetails/ItemDetailContainer/ItemDetailContainer';
-import  './styles/estilos.css'
+import  './App.css'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 
 
