@@ -8,6 +8,7 @@ const ItemDetail = ({ product }) => {
   const [cantidad,setCantidad] = useState(0)
 
   const handlerOnAdd = (cantidad) =>  {
+    console.log("Se agrego al carrito " + cantidad + " unidades")
     setCantidad(cantidad)
  }
 
