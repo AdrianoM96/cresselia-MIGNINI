@@ -2,8 +2,10 @@
 import {Link,NavLink} from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
-
+import { useCartContext } from '../../context/CartContext'
 const Navbar = () =>{
+    
+  const {cantidadItemsCart} = useCartContext();
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
@@ -21,10 +23,17 @@ const Navbar = () =>{
             </li>
             </ul>   
         </div>
-        
-        <div className="col-1">
-            <Link to= "/cart"><button type="button" className="btn btn-info"> <CartWidget></CartWidget> </button></Link>
-        </div>
+        <Link to='/cart'>
+            <div className="col-1">
+                <button className='btn btn-info cart-widget'>
+                    <CartWidget/>
+                    <div className='cart-widget-num'>
+                        {cantidadItemsCart() !== 0 && cantidadItemsCart()}
+                    </div>
+                    
+                </button>
+            </div>
+        </Link>
         </nav>
     );  
 }
