@@ -36,10 +36,14 @@ const ItemDetail = ({ product }) => {
               </div>              
               :
               cantidad > 0 ?
-              <div className="col-4">
-                <Link to='/cart'> <button  className="btn btn-dark" > Ir al Carrito </button></Link>
-               
-              </div> :
+              <>
+                <div className="col-4">
+                  <Link to='/cart'> <button  className="btn btn-dark" > Ir al Carrito </button></Link>
+                </div> 
+                <div className="mt-3">
+                  <Link to='/'> <button  className="btn btn-dark" > Seguir comprando </button></Link>
+                </div>
+              </>:
               <div className="col-4">
                 <ItemCount stock={product.stock} initial={1} onAdd={handlerOnAdd}></ItemCount>
               </div>                
