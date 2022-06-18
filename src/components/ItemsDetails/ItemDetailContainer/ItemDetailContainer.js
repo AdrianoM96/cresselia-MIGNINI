@@ -34,7 +34,6 @@ const ItemDetailContainer = () => {
                   <Spinner></Spinner>
                 </div>  
       }
-      console.log(product)
   return (
     <div className="container">
           <div className="row ">

@@ -2,25 +2,25 @@ import { db, collectionsName } from '../../services/firebase/index'
 import { useCartContext } from '../../context/CartContext'
 import { getDocs,collection,documentId,where,query,writeBatch,addDoc } from "firebase/firestore"
 import { useState } from "react";
+import {useNavigate} from 'react-router-dom'
+import Spinner from '../../components/Spinner/Spinner'
+import Form from './From';
 
 const Checkout = ()  =>{
     const {cartList, totalPrice,clearCart} = useCartContext()
-
+    const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
-
+    const [dataForm,setDataForm] = useState({
+        name:'',
+        email:'',
+        phone:''
+    })
     
     const createOrder = () => {
-  
         setLoading(true)
 
         const order = {
-            buyer: {
-                name: 'teste',
-                email: 'teste',
-                phone: '2222',
-                address: 'test',
-                comment: 'test'
-            },
+            buyer: dataForm,
             items: cartList,
             total: totalPrice()
         }
@@ -53,19 +53,43 @@ const Checkout = ()  =>{
             })
             .then(({ id }) => {
                 batch.commit()
-                clearCart()
                 console.log(`La orden de compra ha sido creada, su id es: ${id}`)
+                clearCart()
+                navigate('/')
+
             })
             .catch(error => {
                 console.log(error)
-                console.log("Algunos productos que esta intentando comprar, no tienen stock")
+                console.log("Algunos productos que esta intentando comprar no tienen stock")
             })
-            .finally(() => {
-                setLoading(false)
-            })
+            .finally(() => setLoading(false) )
     }
+
+    const handleOnChange = (e) => {
+        setDataForm({
+			...dataForm,
+			[e.target.name]: e.target.value,
+		})
+    }
+
+    const handleSubmit = (e) => {
+        createOrder()
+    }
+
+    if(loading){
+        return  <div className="row center">
+                  <Spinner></Spinner>
+                </div>  
+      }
 return (
-    <button onClick={() => createOrder()}> terminar compra</button>
+    <>
+       <Form 
+            onChange={handleOnChange}   
+            createOrder={handleSubmit}
+            dataForm={dataForm}
+       />      
+    </>
+   
 )
 }
 export default Checkout
