@@ -52,9 +52,9 @@ Este proyecto con
 
 ## Dependencias/librerias
 Este proyecto de ReactJs utiliza estas dependencias/librerias.\
-ReactJs -.\  Librería principal del proyecto.
-React Router DOM -.\ Navegación de la App.
-Firebase - Base de datos.
-Bootstrap 4.2  Para el uso de estilos
-SweetAlert2 Para mostrar avisos en pantalla mas estéticos
+ReactJs - Librería principal del proyecto.\
+React Router DOM - Navegación de la App.\
+Firebase - Base de datos.\
+Bootstrap 4.2 - Para el uso de estilos.\
+SweetAlert2 - Para mostrar avisos en pantalla mas estéticos.\
 
