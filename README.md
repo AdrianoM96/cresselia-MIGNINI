@@ -20,7 +20,7 @@ El proyecto estara disponible en http://localhost:3000
 Este proyecto usa el servicio de backend de Firebase. Para que puedas ver todo correctamente deberas crear tu propio proyecto en firebase y colocar sus credenciales en un archivo .env siguiendo este ejemplo.\
 
 ```
-[.env.example] (https://github.com/AdrianoM96/cresselia-MIGNINI/blob/workshop/.env.example)
+[env.example] (https://github.com/AdrianoM96/cresselia-MIGNINI/blob/workshop/.env.example)
 ``` 
 Además, deberás crear una coleccion y ponerle el nombre de "items" y colocarle los siguiente campos:\
 
