@@ -21,7 +21,7 @@ Este proyecto usa el servicio de backend de Firebase. Para que puedas ver todo c
 
 [env.example](https://github.com/AdrianoM96/cresselia-MIGNINI/blob/workshop/.env.example)
 
-Además, deberás crear una coleccion y ponerle el nombre de "items" y colocarle los siguiente campos:\
+Además, deberás crear una colección y ponerle el nombre de "items" y colocarle los siguiente campos:\
 
 * title: string
 * category: string
@@ -30,9 +30,9 @@ Además, deberás crear una coleccion y ponerle el nombre de "items" y colocarle
 * price: number
 * stock: number 
 
-Luego deberas agregar algunos productos a esta base de datos, para poder visualizarlos cuando corras el proyecto. 
+Luego deberás agregar algunos productos a esta base de datos, para poder visualizarlos cuando corras el proyecto. 
 
-La otra colecction sera "orders" y esta se creará automaticamente al crear una orden de compra.
+La otra colección sera "orders" y esta se creará automaticamente al crear una orden de compra.
 
 * Contendrá algunos datos del comprador como: nombre, apellido, teléfono y su email.
 * Los productos que compró.
