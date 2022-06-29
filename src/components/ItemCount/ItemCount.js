@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import './ItemCount.css'
 
 const ItemCount = ({stock,initial,onAdd}) => {
-
+    
 const [contador,setContador] = useState(initial)
   
    const reducir = () => {   
@@ -33,6 +33,7 @@ const [contador,setContador] = useState(initial)
                     <i className="bi bi-plus-circle "></i>
                 </button>  
             </div>
+            
             <div className="row count">
                 <br></br>
                 <div>

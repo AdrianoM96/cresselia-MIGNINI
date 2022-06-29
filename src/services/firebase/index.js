@@ -16,6 +16,7 @@ export const db = getFirestore(app)
 
 export const collectionsName = {
   items: 'items',
-  orders: 'orders'
+  orders: 'orders',
+  categories: 'categories'
 }
 

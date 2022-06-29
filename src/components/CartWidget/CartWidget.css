@@ -1,3 +1,7 @@
 .bi{
     font-size: 2rem;
  }
+ .cart-widget{
+    display: flex;
+    align-items: center ;
+}

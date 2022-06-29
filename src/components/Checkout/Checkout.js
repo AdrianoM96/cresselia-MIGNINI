@@ -1,11 +1,11 @@
 import { db, collectionsName } from '../../services/firebase/index'
-import { useCartContext } from '../../context/CartContext'
 import { getDocs,collection,documentId,where,query,writeBatch,addDoc } from "firebase/firestore"
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom'
 import Spinner from '../../components/Spinner/Spinner'
 import Form from '../Form/From';
 import {swalSuccess,swalError} from  '../../messages/messages'
+import {useCartContext} from '../../context/CartContext';
 
 
 const Checkout = ()  =>{
@@ -22,8 +22,6 @@ const Checkout = ()  =>{
     const createOrder = () => {
 
         setLoading(true)
-
-        
 
         const order = {
             buyer: dataForm,
@@ -42,7 +40,7 @@ const Checkout = ()  =>{
             .then(response => {
                 response.docs.forEach(doc => {
                     const dataDoc = doc.data()
-                    const prodQuantity = cartList.find(prod => prod.id === doc.id)?.cantidadCart
+                    const prodQuantity = cartList.find(prod => prod.id === doc.id)?.cantidad
 
                     if(dataDoc.stock >= prodQuantity) {
                         batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity})
@@ -85,18 +83,18 @@ const Checkout = ()  =>{
 
     if(loading){
         return  <div className="row center">
-                  <Spinner></Spinner>
+                  <Spinner />
                 </div>  
       }
-return (
-    <>
-       <Form 
-            onChange={handleOnChange}   
-            createOrder={handleSubmit}
-            dataForm={dataForm}
-       />         
-    </>
-   
-)
+    return (
+        <>
+            <Form 
+                onChange={handleOnChange}   
+                createOrder={handleSubmit}
+                dataForm={dataForm}
+            />         
+        </>
+    
+    )
 }
 export default Checkout

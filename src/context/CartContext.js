@@ -1,32 +1,28 @@
 import React, { useState,useContext,createContext } from "react";
 
-export const CartContext = createContext([])
+const CartContext = createContext([])
 
-export const useCartContext = () => {
-    return useContext(CartContext)
-}
-
-const CartContextProvider = ({children}) => {
+export const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])
     
-    function addItem(item, cantidad){
+    function addItem(item){
 
         const inCart = cartList.find((itemInCart) => itemInCart.id === item.id)
         var newCart=[]
             if (inCart) {
                  newCart = cartList.map((ItemInCart)=>{
                     if(ItemInCart.id===item.id){
-                        return {...inCart,cantidadCart:cantidad}
+                        return {...inCart,cantidad:item.cantidad}
                     }else return ItemInCart
                 })
                 setCartList(newCart)
             }else {
-                newCart=[...cartList,{...item,cantidadCart:cantidad}]
+                newCart=[...cartList,item]
                 setCartList(newCart)
             } 
     }
-    
+
     function removeItem(itemId){ 
         const newCart = (items) => items.filter((item) => item.id !== itemId)
         setCartList(newCart);
@@ -37,25 +33,27 @@ const CartContextProvider = ({children}) => {
     }
 
     const cantidadItemsCart = () => {
-        return cartList.reduce( (acum, prod) => acum = acum + prod.cantidadCart , 0 )
+        return cartList.reduce( (acum, prod) => acum = acum + prod.cantidad , 0 )
      }
 
      const totalPrice = () => {
-        return cartList.reduce( (acum, prod) => acum = acum + (prod.price * prod.cantidadCart) , 0 )
+        return cartList.reduce( (acum, prod) => acum = acum + (prod.price * prod.cantidad) , 0 )
      }
 
-return (
-    <CartContext.Provider value={{
-        cartList,
-        totalPrice,
-        cantidadItemsCart,
-        addItem,
-        removeItem,
-        clearCart,
-        }}>
-        {children}
-    </CartContext.Provider>
-)
+    return (
+        <CartContext.Provider value={{
+            cartList,
+            totalPrice,
+            cantidadItemsCart,
+            addItem,
+            removeItem,
+            clearCart,
+            }}>
+            {children}
+        </CartContext.Provider>
+    )
 }
 
-export default CartContextProvider
+export const useCartContext = () => {
+    return useContext(CartContext)
+}

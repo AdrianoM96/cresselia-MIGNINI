@@ -13,7 +13,7 @@ const Form = ({onChange,createOrder,dataForm})  =>{
         lastname: yup.string().required(requiredMessage),
         email: yup.string().email("El email debe ser un formato válido: ejemplo@ejemplo.ejemplo").required(requiredMessage),
         remail: yup.string().email("El email debe ser un formato válido: ejemplo@ejemplo.ejemplo").oneOf([yup.ref("email")],"Los email deben ser iguales").required(requiredMessage),
-        phone: yup.number().typeError("Solo debes introducir numeros").positive().integer().required(requiredMessage)
+        phone: yup.number().typeError("Este campo es obligatorio y solo debes introducir números").positive().integer().required(requiredMessage)
     })  
 
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -83,6 +83,7 @@ const Form = ({onChange,createOrder,dataForm})  =>{
                                     <label >Repita el Email*</label>
                                         <input 
                                             className="form-control" type="text"
+                                            placeholder='ejemplo@algo.algo'
                                             {...register("remail")}
                                              defaultValue={dataForm.remail}
                                         />
